@@ -49,6 +49,16 @@ renderJourneys();updateAccount();
   const SUPABASE_KEY = "sb_publishable_d67_6eTJ4dvjU1x5kxwIUw_Ft046TUW";
   const carregarSupabase = document.createElement('script');
 carregarSupabase.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+
+  carregarSupabase.onload = function() {
+  window.db = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+  console.log("Guardiã conectada ao Supabase");
+};
+
+
 document.head.appendChild(carregarSupabase);
   
 </script></body></html>
